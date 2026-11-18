@@ -166,16 +166,16 @@
       return;
     }
 
-    let message = `Olá! Vim pelo site da Max Sorvetes Ibertioga e gostaria de fazer um pedido.\n\n• ${item}`;
+    let message = `Hello! I found Max Sorvetes Ibertioga online and would like to place an order.\n\n• ${item}`;
 
     if (/sorvete/i.test(item)) {
-      message += "\n\nPode me informar os sabores disponíveis?";
+      message += "\n\nCould you tell me which flavors are available?";
     }
     if (/picolé/i.test(item)) {
-      message += "\n\nQuero escolher o tipo e sabor do picolé.";
+      message += "\n\nI would like to choose the popsicle type and flavor.";
     }
     if (/chuchup/i.test(item)) {
-      message += "\n\nQuero escolher o tamanho e sabor do chuchup.";
+      message += "\n\nI would like to choose the size and flavor of the frozen treat.";
     }
 
     whatsApp(message);
@@ -199,16 +199,16 @@
     content.innerHTML = `
       <div class="modal-header">
         <div>
-          <span class="section-tag">✦ Monte seu açaí</span>
+          <span class="section-tag">✦ Build your açaí</span>
           <h3>${productName}</h3>
         </div>
-        <button class="modal-close" type="button" data-close-modal aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+        <button class="modal-close" type="button" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <div class="modal-section">
-        <h4>Escolha até 3 acompanhamentos grátis</h4>
+        <h4>Choose up to 3 free toppings</h4>
         <div class="choice-list" data-free-list>
-          ${["Leite em pó", "Leite condensado", "Calda de chocolate", "Calda de morango"]
+          ${["Powdered milk", "Condensed milk", "Chocolate sauce", "Strawberry sauce"]
             .map(
               (item) => `
             <label><span>${item}</span><input type="checkbox" value="${item}"></label>
@@ -219,16 +219,16 @@
       </div>
 
       <div class="modal-section">
-        <h4>Extras opcionais</h4>
-        <label class="radio-row"><span>Sem extras</span><input type="radio" name="extras-mode" value="none" checked></label>
-        <label class="radio-row"><span>Adicionar extras</span><input type="radio" name="extras-mode" value="add"></label>
+        <h4>Optional extras</h4>
+        <label class="radio-row"><span>No extras</span><input type="radio" name="extras-mode" value="none" checked></label>
+        <label class="radio-row"><span>Add extras</span><input type="radio" name="extras-mode" value="add"></label>
         <div class="choice-list" data-extra-list hidden>
           ${[
             ["Paçoca", 2.5],
             ["Granulado", 2],
             ["Granola", 2],
             ["Fini", 3],
-            ["Morango", 4],
+            ["Strawberry", 4],
             ["Banana", 3],
             ["Kiwi", 4],
             ["Nutella", 5],
@@ -248,7 +248,7 @@
       </div>
 
       <div class="modal-actions">
-        <button class="btn-cancel" type="button" data-close-modal>Cancelar</button>
+        <button class="btn-cancel" type="button" data-close-modal>Cancel</button>
         <button class="btn-confirm" type="button" data-confirm-acai><i class="fa-brands fa-whatsapp"></i> Confirmar</button>
       </div>
     `;
@@ -318,10 +318,10 @@
 
       let message = `Olá! Vim pelo site da Max Sorvetes Ibertioga e gostaria de fazer um pedido:\n\n`;
       message += `• ${product}\n`;
-      message += `Acompanhamentos: ${free.length ? free.join(", ") : "sem acompanhamentos"}\n`;
-      message += `Extras: ${extrasText.length ? extrasText.join(", ") : "sem extras"}\n\n`;
+      message += `Toppings: ${free.length ? free.join(", ") : "no toppings"}\n`;
+      message += `Extras: ${extrasText.length ? extrasText.join(", ") : "no extras"}\n\n`;
       message += `Total: ${formatMoney(basePrice + extrasTotal)}\n\n`;
-      message += `Endereço para entrega:\nForma de pagamento:`;
+      message += `Address para entrega:\nPayment method:`;
 
       closeModal();
       whatsApp(message);
