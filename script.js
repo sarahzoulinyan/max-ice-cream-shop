@@ -249,7 +249,7 @@
 
       <div class="modal-actions">
         <button class="btn-cancel" type="button" data-close-modal>Cancel</button>
-        <button class="btn-confirm" type="button" data-confirm-acai><i class="fa-brands fa-whatsapp"></i> Confirmar</button>
+        <button class="btn-confirm" type="button" data-confirm-acai><i class="fa-brands fa-whatsapp"></i> Confirm</button>
       </div>
     `;
 
